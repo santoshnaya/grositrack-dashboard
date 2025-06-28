@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: #111827;
+  color: white;
+}
+
+@layer components {
+  .card {
+    @apply bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition-all duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-card text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-all duration-200 border border-gray-700;
+  }
+  
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-available {
+    @apply bg-primary/20 text-primary;
+  }
+  
+  .status-restock {
+    @apply bg-danger/20 text-danger;
+  }
+}
+
+.animate-chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: chart-line 2s ease-out forwards;
+}
+
+@keyframes chart-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
